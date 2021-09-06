@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{%extends 'index.html'%}
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        {%for ordered_item in ordered_items %}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ordered_item.product.image.url}}" class="card-img-top" style="height: 300px" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ordered_item.product.mobile_name}}</h5>
+
+                    <p class="card-text">{{ordered_item.status}}</p>
+                    <a href="{%url 'delorder' ordered_item.id %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+{% endblock %}
+

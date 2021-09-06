@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<table class="table">
+    {%for brand in brands %}
+    <tr>
+        <td><h4>{{brand.id}}</h4></td>
+        <td><h4>{{brand.brand_name}}</h4></td>
+        <td><a href="{%url 'updatebrand' brand.id %}" class="btn btn-success">Update</a></td>
+        <td><a href="{%url 'deletebrand' brand.id %}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+</body>
+</html>

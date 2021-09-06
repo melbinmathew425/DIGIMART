@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{%extends 'index.html' %}
+
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{mobile.image.url}}" class="card-img-top" style="height: 500px" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{mobile.mobile_name}}</h5>
+                    <p class="card-text">{{mobile.specs}}</p>
+                    <p class="card-text">{{mobile.brand}}</p>
+                    <p class="card-text">{{mobile.price}}</p>
+                    <a href="{%url 'add_to_cart' mobile.id %}" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4"></div>
+
+    </div>
+</div>
+{% endblock %}
+
